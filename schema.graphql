@@ -8,7 +8,7 @@ type Mutation {
   login(login: String!, password: String!): Viewer!
   logout: Viewer!
   register(email: String!, password: String!, username: String!): Viewer!
-  update(description: String, email: String, id: String, newUsername: String): User
+  update(description: String, email: String, id: String, username: String): User
 }
 
 type Package {

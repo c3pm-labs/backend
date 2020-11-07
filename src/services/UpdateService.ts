@@ -5,16 +5,16 @@ import { UserInputError } from '../utils/errors';
 
 export interface UpdateUserParams {
   id?: string;
-  newUsername?: string;
+  username?: string;
   email?: string;
   description?: string;
 }
 
 export class UpdateService extends Service {
   async updateUser({
-    id, newUsername, email, description,
+    id, username, email, description,
   }: UpdateUserParams): Promise<User> {
-    if (!newUsername && !email && !description) {
+    if (!username && !email && !description) {
       throw new UserInputError('Require one argument');
     }
     return this.db.user.update({
@@ -23,7 +23,7 @@ export class UpdateService extends Service {
       },
       data: {
         email,
-        username: newUsername,
+        username,
         description,
       },
     });

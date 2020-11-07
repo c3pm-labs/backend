@@ -43,7 +43,7 @@ export const Mutation = mutationType({
       nullable: true,
       args: {
         id: stringArg(),
-        newUsername: stringArg(),
+        username: stringArg(),
         email: stringArg(),
         description: stringArg(),
       },
