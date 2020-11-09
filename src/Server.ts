@@ -38,7 +38,7 @@ class Server {
         secure: env.get('NODE_ENV').asString() === 'production',
         maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
         httpOnly: true,
-        sameSite: 'none',
+        sameSite: env.get('NODE_ENV').asString() === 'production' ? 'none' : undefined,
       },
     }));
     const graphqlMiddleware = getGraphqlMiddleware(this.db);

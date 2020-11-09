@@ -42,8 +42,8 @@ export const Mutation = mutationType({
       type: User,
       nullable: true,
       args: {
-        usernameBeforeUpdate: stringArg(),
-        usernameAfterUpdate: stringArg(),
+        id: stringArg(),
+        username: stringArg(),
         email: stringArg(),
         description: stringArg(),
       },
