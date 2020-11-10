@@ -8,6 +8,7 @@ type Mutation {
   login(login: String!, password: String!): Viewer!
   logout: Viewer!
   register(email: String!, password: String!, username: String!): Viewer!
+  resetPassword(email: String, password: String): User!
   update(description: String, email: String, id: String, username: String): User
 }
 
